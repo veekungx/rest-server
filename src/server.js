@@ -12,14 +12,7 @@ const app = express();
 const env = process.env.NODE_ENV || 'developement';
 
 mongoose.Promise = global.Promise;
-
-if (env === 'test') {
-  mongoose.connect('mongodb://thedb/test', { useMongoClient: true });
-} else if (env === 'developement') {
-  mongoose.connect('mongodb://thedb/dev', { useMongoClient: true });
-} else if (env === 'production') {
-  mongoose.connect('mongodb://thedb', { useMongoClient: true });
-}
+mongoose.connect('mongodb://thedb/test', { useMongoClient: true });
 
 app.use(cors());
 app.use(bodyParser.json());
