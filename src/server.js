@@ -14,11 +14,11 @@ const env = process.env.NODE_ENV || 'developement';
 mongoose.Promise = global.Promise;
 
 if (env === 'test') {
-  mongoose.connect('mongodb://localhost:27017/test', { useMongoClient: true });
+  mongoose.connect('mongodb://thedb/test', { useMongoClient: true });
 } else if (env === 'developement') {
-  mongoose.connect('mongodb://localhost:27017/dev', { useMongoClient: true });
+  mongoose.connect('mongodb://thedb/dev', { useMongoClient: true });
 } else if (env === 'production') {
-  mongoose.connect('mongodb://veekungx:123456@ds227325.mlab.com:27325/tw-assignment', { useMongoClient: true });
+  mongoose.connect('mongodb://thedb', { useMongoClient: true });
 }
 
 app.use(cors());

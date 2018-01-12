@@ -7,7 +7,7 @@ const languageData = require('../data/language.json');
 const timezoneData = require('../data/timezone.json');
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/dev', { useMongoClient: true });
+mongoose.connect('mongodb://thedb/dev', { useMongoClient: true });
 mongoose.connection.once('open', async () => {
   await seed();
   console.log('Seed completed');
